@@ -1,49 +1,28 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Nav.scss';
+import { slide as Menu } from 'react-burger-menu';
 
 const Nav = () => {
 
-    const [menuVisible, setMenuVisible] = useState(false);
-
-    const handleShowMenu = () => {
-        setMenuVisible(true);
-    };
-
-    const handleHideMenu = () => {
-        setMenuVisible(false);
-    };
-
     return (
-        <>
-            <header>
-                <div className="burger">
-                    <i
-                        className="fa fa-bars"
-                        aria-hidden="true"
-                        onClick={handleShowMenu}
-                    />
-                </div>
-                <div className="logo">
-                    Logo
-                </div>
-            </header>
-            <nav className={!menuVisible ? "hidden" : null}>
-                <i
-                    className="fa fa-times"
-                    aria-hidden="true"
-                    onClick={handleHideMenu}
-                />
-                <ul className="nav__list">
-                    <li className="nav__list__item">Home</li>
-                    <li className="nav__list__item">Your list</li>
-                    <li className="nav__list__item">Location</li>
-                    <li className="nav__list__item">About</li>
-                </ul>
+        <header>
+            <nav>
+                <Menu
+                    className="menu">
+                    <a className="menu-item" href="#">Home</a>
+                    <a className="menu-item" href="#">Your List</a>
+                    <a className="menu-item" href="#">Location</a>
+                    <a className="menu-item" href="#">About</a>
+                </Menu>
             </nav>
-        </>
+            <div className="logo">
+                <i className="fa fa-paw" aria-hidden="true"></i>
+                <span>TinDog</span>
+            </div>
+        </header>
     );
 };
 
-// podpiąć routing pod li
+// podpiąć routing pod a
 
 export default Nav;

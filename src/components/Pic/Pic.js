@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import './Pic.scss';
 
-const Pic = () => {
+const Pic = ({dogPicture}) => {
+
+
+    const styles = {
+        backgroundImage: `url("${dogPicture}")`
+    };
+
     return (
-        <div>
-
-        </div>
+        <div className="pic__container" style={styles} />
     );
 };
 

@@ -1,9 +1,11 @@
 import React from 'react';
+import './InfoBar.scss';
 
-const InfoBar = () => {
+const InfoBar = ({dogName, dogAge}) => {
+
     return (
-        <div>
-
+        <div className="infobar">
+            <span className="infobar__info">{dogName}, {dogAge} yrs</span>
         </div>
     );
 };

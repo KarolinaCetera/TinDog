@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.infobar {
+	height: 20vw;
+	position: relative;
+	top: 2%;
+	.infobar__info {
+		font-size: 4rem;
+	}
+}
+
+// naprawić style
