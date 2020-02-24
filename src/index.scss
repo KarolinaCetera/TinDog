@@ -1,0 +1,12 @@
+@import './styles/reset';
+@import "./styles/fonts";
+@import "./styles/variables";
+
+html {
+	font-size: 10px;
+}
+
+body {
+	background-color: $bg-color;
+	font-family: $main-font;
+}

@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+header {
+	padding: 2rem;
+	background-color: $secondary-color;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 0 17px 0 rgba(148,127,148,1);
+	.burger {
+		padding-right: 9rem;
+		color: $font-color;
+		font-size: 5rem;
+	}
+	.logo {
+		font-size: 5rem;
+		color: $font-color;
+	}
+}
+
+nav {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: $secondary-color;
+	top: 0;
+	left: 0;
+	&.hidden {
+		display: none;
+	}
+	.fa {
+		position: absolute;
+		right: 4%;
+		color: $font-color;
+		font-size: 4rem;
+		line-height: 6rem;
+	}
+	.nav__list {
+		.nav__list__item {
+			padding: 4rem 4rem 2rem;
+			font-size: 5rem;
+			text-transform: uppercase;
+			letter-spacing: .1rem;
+			color: $font-color;
+
+		}
+	}
+}
