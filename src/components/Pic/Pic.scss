@@ -11,3 +11,16 @@
 		filter: blur(8px);
 	}
 }
+
+.no-dogs {
+	height: 55vh;
+	width: 35rem;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 5rem;
+	font-size: 3rem;
+	padding: 2rem;
+	margin: 0 auto;
+}

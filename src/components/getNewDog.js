@@ -1,7 +1,5 @@
-import dogService from "./dogService";
-
 const getNewDog = () => {
-    const dogFeatures = dogService();
+    let randomDog = {};
     fetch('https://tin-dog.firebaseio.com/dogs.json')
         .then(response => {
             if(response.ok) {
@@ -11,11 +9,14 @@ const getNewDog = () => {
             }
         })
         .then(dog => {
-            console.log(dog)
+            const arrayOfDogs = Object.values(dog);
+            randomDog = arrayOfDogs[Math.floor(Math.random() * (10 - 1)) + 1]
         })
         .catch(error => {
             console.log(error);
-        })
+        });
+    console.log(randomDog)
+
 };
 
 export default getNewDog;

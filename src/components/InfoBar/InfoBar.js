@@ -1,13 +1,20 @@
 import React from 'react';
 import './InfoBar.scss';
 
-const InfoBar = ({dogName, dogAge, info}) => {
+const InfoBar = ({dog, info, dogs}) => {
 
-    return (
-        <div className={!info ? "infobar" : "infobar invisible"}>
-            <span className="infobar__info">{dogName}, {dogAge} yrs</span>
-        </div>
-    );
+    const dogsLength = dogs.length;
+
+    if (dogsLength > 0 ){
+        return (
+            <div className={!info ? "infobar" : "infobar invisible"}>
+                <span className="infobar__info">{dog.name}, {dog.age} yrs</span>
+            </div>
+        )
+    } else {
+        return null;
+    }
+
 };
 
 export default InfoBar;
