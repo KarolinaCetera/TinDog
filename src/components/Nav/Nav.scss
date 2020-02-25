@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 
+
 header {
 	width: 100vw;
 	height: 10%;
@@ -9,18 +10,18 @@ header {
 
 .menu {
 	background-color: $secondary-color;
-	.menu-item {
+	li {
 		padding: 3rem 4rem 2rem;
-		font-size: 3rem;
-		text-decoration: none;
-		color: $bg-color;
-		border-bottom: 2px solid transparent;
 		&:hover {
-			border-bottom: 2px solid $font-color;
 			transform: scale(1.1);
 		}
 		&:focus {
 			outline: none;
+		}
+		a {
+			font-size: 3rem;
+			text-decoration: none;
+			color: $bg-color;
 		}
 	}
 }

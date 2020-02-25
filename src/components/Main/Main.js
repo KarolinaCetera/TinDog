@@ -1,17 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './Main.scss';
-import Nav from '../Nav/Nav';
 import Pic from '../Pic/Pic';
 import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
-import {
-    HashRouter,
-    Route,
-    Link,
-    Switch,
-    NavLink,
-} from 'react-router-dom';
+
 // import postNewDog from "../postNewDog";
 
 const Main = () => {
@@ -77,7 +70,7 @@ const Main = () => {
 
     return (
         <>
-            <Nav/>
+
             {isLoading ? null : <section className="dog">
                 <Pic dog={dog}
                      info={info}
@@ -95,7 +88,11 @@ const Main = () => {
                 info={info}
                 dog={dog}
                 onClose={handleCloseInfo}
-                />}
+                />
+            }
+
+
+
 
             {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
