@@ -1,10 +1,10 @@
 import React from 'react';
 import './InfoBar.scss';
 
-const InfoBar = ({dogName, dogAge}) => {
+const InfoBar = ({dogName, dogAge, info}) => {
 
     return (
-        <div className="infobar">
+        <div className={!info ? "infobar" : "infobar invisible"}>
             <span className="infobar__info">{dogName}, {dogAge} yrs</span>
         </div>
     );

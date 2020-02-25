@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.info-panel {
+	display: flex;
+	flex-direction: column;
+	height: 85vh;
+	width: 90vw;
+	border-radius: 20px;
+	position: absolute;
+	top: 12%;
+	box-shadow: 0 0 50px 6px rgba(0,0,0,0.17);
+	background-color: #dddddd79;
+	h2 {
+		font-size: 5rem;
+		font-weight: 800;
+		padding: 2rem;
+	}
+	.info-panel__icons {
+		display: flex;
+		margin: 2rem auto;
+		justify-content: space-evenly;
+		align-items: center;
+		i {
+			font-size: 10rem;
+			padding: 0 2rem;
+			&.fa-phone {
+				color: seagreen;
+			}
+			&.fa-times {
+				color: brown;
+			}
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}

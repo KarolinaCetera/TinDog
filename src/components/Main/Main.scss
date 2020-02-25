@@ -7,11 +7,12 @@
 	flex-direction: column;
 	align-items: center;
 	.dog {
-		margin: 3rem auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 3rem;
 	}
 }
-
-
 
 @media screen and (min-width: 600px) {
 	#root {

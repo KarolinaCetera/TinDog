@@ -1,0 +1,35 @@
+.fav-panel {
+	border: 1px solid #aaa;
+	border-radius: 50px;
+	padding: 0 2rem;
+	i {
+		font-size: 9rem;
+		padding: 0 2rem;
+		transition: .2s;
+		&.fa-times {
+			font-size: 10rem;
+			&:hover {
+				transform: scale(.8);
+				cursor: pointer;
+			}
+		}
+		&.fa-info {
+			color: cornflowerblue;
+			&:hover {
+				transform: scale(1.1);
+				cursor: pointer;
+			}
+
+		}
+		&.fa-heart {
+			color: coral;
+			&:hover {
+				transform: scale(1.2);
+				cursor: pointer;
+			}
+		}
+	}
+	&.invisible {
+		filter: blur(8px);
+	}
+}

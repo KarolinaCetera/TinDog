@@ -1,10 +1,10 @@
 import React from 'react';
+import './InfoRow.scss';
 
 const InfoRow = ({feature}) => {
     return (
         <div className="info-row">
-            <h3>{feature.type}</h3>
-            <p>{feature.value}</p>
+            <h3>{feature.type}: {feature.value}</h3>
         </div>
     );
 };

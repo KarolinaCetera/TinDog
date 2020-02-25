@@ -1,10 +1,13 @@
 @import "../../styles/variables";
 
 .pic__container {
-	height: 45vh;
-	width: 30rem;
+	height: 55vh;
+	width: 35rem;
 	border-radius: 10px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	&.invisible {
+		filter: blur(8px);
+	}
 }

@@ -1,11 +1,15 @@
 @import "../../styles/variables";
 
 .infobar {
-	height: 20vw;
-	position: relative;
-	top: 2%;
+	align-self: flex-start;
+	padding: 2rem 0;
 	.infobar__info {
-		font-size: 4rem;
+		text-align: left;
+		font-size: 5rem;
+		font-weight: 800;
+	}
+	&.invisible {
+		filter: blur(8px);
 	}
 }
 

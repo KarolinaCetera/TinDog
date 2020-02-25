@@ -1,16 +1,29 @@
 import React from 'react';
 import InfoRow from "../InfoRow/InfoRow";
+import './InfoPanel.scss';
 
-const InfoPanel = ({dogFeatures}) => {
+const InfoPanel = ({dog, info, onClose}) => {
+    const handleClose = () => {
+        if (typeof onClose === 'function') {
+            onClose()
+        }
+    };
+
     return (
-        <section className="info-panel">
-            {dogFeatures.map((feature, i) => {
+        <section className={info ? "info-panel" : "info-panel hidden" }>
+            <h2>{dog.name}, {dog.age}</h2>
+            {dog.features.map((feature, i) => {
                 return (
-                    <InfoRow
-                        key={i}
-                        feature={feature}
-                    />)
+                        <InfoRow
+                            key={i}
+                            feature={feature}
+                        />
+                    )
             })}
+            <div className="info-panel__icons">
+                <i className="fa fa-phone" aria-hidden="true"/>
+                <i className="fa fa-times" aria-hidden="true" onClick={handleClose}/>
+            </div>
         </section>
     );
 };

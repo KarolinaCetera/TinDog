@@ -1,15 +1,14 @@
 import React from 'react';
 import './Pic.scss';
 
-const Pic = ({dogPicture}) => {
-
+const Pic = ({dogPicture, info}) => {
 
     const styles = {
         backgroundImage: `url("${dogPicture}")`
     };
 
     return (
-        <div className="pic__container" style={styles} />
+        <div className= {!info ? "pic__container" : "pic__container invisible"} style={styles} />
     );
 };
 
