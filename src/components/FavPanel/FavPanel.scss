@@ -1,13 +1,10 @@
 .fav-panel {
-	border: 1px solid #aaa;
-	border-radius: 50px;
-	padding: 0 2rem;
 	i {
-		font-size: 9rem;
+		font-size: 8rem;
 		padding: 0 2rem;
 		transition: .2s;
 		&.fa-times {
-			font-size: 10rem;
+			font-size: 9rem;
 			&:hover {
 				transform: scale(.8);
 				cursor: pointer;

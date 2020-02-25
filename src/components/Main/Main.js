@@ -12,7 +12,6 @@ const Main = () => {
     const [dog, setDog] = useState('');
     const [dogs, setDogs] = useState([]);
     const [info, setInfo] = useState(false);
-    const [list, setList] = useState([]);
     const [isLoading, toggleIsLoading] = useState(true);
 
     const dogsLength = dogs.length;
@@ -27,7 +26,11 @@ const Main = () => {
                 }
             })
             .then(dog => {
+                const dogsID = Object.keys(dog);
                 const arrayOfDogs = Object.values(dog);
+                arrayOfDogs.forEach((dog, index) => {
+                   dog.id = dogsID[index];
+                });
                 const randomDog = arrayOfDogs[Math.floor(Math.random() * (dogsLength - 1)) + 1];
                 setDog(randomDog);
                 setDogs(arrayOfDogs);
@@ -60,17 +63,33 @@ const Main = () => {
     };
 
     const handleAddDog = () => {
-        setList(prevState => [...prevState, dog]);
-        setDog(dogs[[Math.floor(Math.random() * (dogsLength - 1)) + 1]]);
+        // setList(prevState => [...prevState, dog]);
+        fetch('https://tin-dog.firebaseio.com/list.json', {
+            method: "POST",
+            body: JSON.stringify(dog),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if(response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Błąd sieci!')
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
         const dogIndex = dogs.indexOf(dog);
         const filteredDogs = [...dogs];
         filteredDogs.splice(dogIndex,1);
         setDogs(filteredDogs);
+        setDog(dogs[[Math.floor(Math.random() * (dogsLength - 1)) + 1]]);
     };
 
     return (
         <>
-
             {isLoading ? null : <section className="dog">
                 <Pic dog={dog}
                      info={info}
@@ -90,10 +109,6 @@ const Main = () => {
                 onClose={handleCloseInfo}
                 />
             }
-
-
-
-
             {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
     );

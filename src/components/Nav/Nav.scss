@@ -1,11 +1,13 @@
 @import "../../styles/variables";
 
-
 header {
 	width: 100vw;
-	height: 10%;
 	background-color: $secondary-color;
 	box-shadow: 0 0 23px 0 rgba(125,125,125,1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
 }
 
 .menu {
@@ -53,10 +55,7 @@ nav {
 }
 
 .logo {
-	position: absolute;
-	top: 1%;
-	right: 0;
-	padding: 1rem 2.5rem;
+	padding: 1.5rem 2rem;
 	display: flex;
 	align-items: center;
 	color: $bg-color;
@@ -64,4 +63,11 @@ nav {
 	span {
 		font-family: $logo-font;
 	}
+}
+
+.bm-menu-wrap {
+	top: 0;
+}
+.bm-overlay {
+	top: 0;
 }

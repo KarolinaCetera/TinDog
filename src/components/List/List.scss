@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.dogs-list {
+	position: relative;
+	z-index: -7;
+	top: 12%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	.dogs-list__element {
+		display: flex;
+		justify-content: space-between;
+		padding: 3rem 4rem;
+		&:nth-child(even) {
+			background-color: #FF7F5080;
+		}
+		.dogs__name {
+			font-size: 4rem;
+		}
+		.dogs__icons {
+			font-size: 4rem;
+			i {
+				padding: 0 1rem;
+				cursor: pointer;
+				&.fa-phone {
+					color: seagreen;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+				&.fa-info {
+					color: cornflowerblue;
+				}
+				&.fa-times {
+					color: brown;
+				}
+			}
+		}
+	}
+}

@@ -52,7 +52,7 @@ const postNewDog = () => {
                 })
                 .catch(error => {
                     console.log(error);
-                })
+                });
             console.log('gotowe!')
         },3000);
 
