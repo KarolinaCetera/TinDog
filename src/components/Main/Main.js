@@ -89,24 +89,26 @@ const Main = () => {
 
     return (
         <>
-            {isLoading ? null: <section className="dog">
-                <Pic dog={dog}
-                     info={info}
-                     dogsLength={dogsLength}
-                />
-                <InfoBar
-                    dog={dog}
+            <main>
+                {isLoading ? null: <section className="dog">
+                    <Pic dog={dog}
+                         info={info}
+                         dogsLength={dogsLength}
+                    />
+                    <InfoBar
+                        dog={dog}
+                        info={info}
+                        dogs={dogs}
+                    />
+                    {dogsLength === 0 ? null : <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>}
+                </section> }
+                {isLoading || dogsLength === 0 ?  null : <InfoPanel
                     info={info}
-                    dogs={dogs}
+                    dog={dog}
+                    onClose={handleCloseInfo}
                 />
-            </section> }
-            {dogsLength === 0 ? null : <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>}
-            {isLoading || dogsLength === 0 ?  null : <InfoPanel
-                info={info}
-                dog={dog}
-                onClose={handleCloseInfo}
-                />
-            }
+                }
+            </main>
             {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
     );

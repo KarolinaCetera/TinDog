@@ -24,11 +24,21 @@ button {
 	border-radius: 20px;
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
+@media screen and (min-width: 1025px) {
 	#root {
-		.dog {
-			align-self: flex-start;
-			margin: 3rem;
+		main {
+			display: flex;
+			width: 100vw;
+			height: 100vh;
+			.dog {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-self: flex-start;
+				margin: 1rem 2rem;
+			}
 		}
+
 	}
 }

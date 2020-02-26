@@ -69,3 +69,18 @@
 		}
 	}
 }
+
+@media screen and (min-width: 1025px) {
+	.fav-panel {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i {
+			font-size: 12rem;
+			transition: .2s;
+			&.fa-times {
+				font-size: 13rem;
+			}
+		}
+	}
+}

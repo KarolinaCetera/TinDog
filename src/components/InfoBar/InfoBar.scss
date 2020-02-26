@@ -31,11 +31,10 @@
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
+@media screen and (min-width: 1025px) {
 	.infobar {
-		margin-bottom: 2rem;
 		.infobar__info {
-			font-size: 8rem;
+			font-size: 6rem;
 		}
 	}
 }
