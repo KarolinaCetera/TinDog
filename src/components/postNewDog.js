@@ -19,7 +19,11 @@ const postNewDog = () => {
             });
         };
 
-        fetch('https://random.dog/woof.json')
+        fetch('https://api.thedogapi.com/v1/images/search', {
+            headers: {
+                "x-api-key": "01959c1d-a48c-487b-9b9c-c8b6b9adb52a"
+            }
+        })
             .then(response => {
                 if (response.ok) {
                     return response.json()
@@ -28,7 +32,7 @@ const postNewDog = () => {
                 }
             })
             .then(picture => {
-                dog.picture = picture.url;
+                dog.picture = picture[0].url;
                 setName();
                 dog.randomize();
             })

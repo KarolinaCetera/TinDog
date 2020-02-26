@@ -2,10 +2,10 @@
 
 .infobar {
 	align-self: flex-start;
-	padding: 2rem 0;
+	padding: 1rem 0;
 	.infobar__info {
 		text-align: left;
-		font-size: 4.5rem;
+		font-size: 3rem;
 		font-weight: 800;
 	}
 	&.invisible {
@@ -13,4 +13,31 @@
 	}
 }
 
-// naprawić style
+@media screen and (min-width: 360px) {
+	.infobar {
+		padding: 2rem 0;
+		.infobar__info {
+			font-size: 4.5rem;
+		}
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+	.infobar {
+		margin-bottom: 2rem;
+		.infobar__info {
+			font-size: 8rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+	.infobar {
+		margin-bottom: 2rem;
+		.infobar__info {
+			font-size: 8rem;
+		}
+	}
+}
+
+

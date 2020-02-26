@@ -72,3 +72,67 @@ nav {
 .bm-overlay {
 	top: 0;
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.menu {
+		background-color: $secondary-color;
+		li {
+			padding: 3rem 4rem 2rem;
+			&:hover {
+				transform: scale(1.1);
+			}
+			&:focus {
+				outline: none;
+			}
+			a {
+				font-size: 5rem;
+				text-decoration: none;
+				color: $bg-color;
+			}
+		}
+	}
+	nav {
+		.bm-burger-button {
+			position: absolute;
+			width: 3.6rem;
+			height: 3rem;
+			left: 2.5rem;
+			top: 2rem;
+		}
+
+		.bm-burger-bars {
+			background: $bg-color;
+		}
+
+		.bm-burger-bars-hover {
+			background: #a90000;
+		}
+
+		.bm-cross-button {
+			height: 4rem;
+			width: 4rem;
+		}
+
+		.bm-cross {
+			background: #bdc3c7;
+		}
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		color: $bg-color;
+		font-size: 5rem;
+		span {
+			font-family: $logo-font;
+		}
+	}
+
+	.bm-menu-wrap {
+		top: 0;
+	}
+	.bm-overlay {
+		top: 0;
+	}
+
+}

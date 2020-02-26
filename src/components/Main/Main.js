@@ -4,8 +4,7 @@ import Pic from '../Pic/Pic';
 import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
-
-import postNewDog from "../postNewDog";
+// import postNewDog from "../postNewDog";
 
 const Main = () => {
 
@@ -41,11 +40,10 @@ const Main = () => {
             })
     }, []);
 
-
-    const handleCreateDogs = (e) => {
-        e.preventDefault();
-        postNewDog();
-    };
+    // const handleCreateDogs = (e) => {
+    //     e.preventDefault();
+    //     postNewDog();
+    // };
 
     const handleInfo = () => {
         setInfo(true);
@@ -86,14 +84,15 @@ const Main = () => {
         filteredDogs.splice(dogIndex,1);
         setDogs(filteredDogs);
         setDog(dogs[[Math.floor(Math.random() * (dogsLength - 1)) + 1]]);
+        toggleIsLoading(false);
     };
 
     return (
         <>
-            {isLoading ? null : <section className="dog">
+            {isLoading ? null: <section className="dog">
                 <Pic dog={dog}
                      info={info}
-                     dogs={dogs}
+                     dogsLength={dogsLength}
                 />
                 <InfoBar
                     dog={dog}
@@ -103,13 +102,12 @@ const Main = () => {
             </section> }
             {dogsLength === 0 ? null : <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>}
             {isLoading || dogsLength === 0 ?  null : <InfoPanel
-                // dogs={dogs}
                 info={info}
                 dog={dog}
                 onClose={handleCloseInfo}
                 />
             }
-            <button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>
+            {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
     );
 };

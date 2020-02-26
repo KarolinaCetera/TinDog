@@ -1,6 +1,22 @@
 .info-row {
 	padding: 1rem 2rem;
 	h3 {
-		font-size: 3rem;
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.info-row {
+		h3 {
+			font-size: 3rem;
+		}
+	}
+}
+
+@media screen and  (min-width: 481px) and (max-width: 1024px) {
+	.info-row {
+		h3 {
+			font-size: 5rem;
+		}
 	}
 }
