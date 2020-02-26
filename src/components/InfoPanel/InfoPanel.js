@@ -2,16 +2,13 @@ import React from 'react';
 import InfoRow from "../InfoRow/InfoRow";
 import './InfoPanel.scss';
 
-const InfoPanel = ({dog, info, onClose, dogs}) => {
+const InfoPanel = ({dog, info, onClose}) => {
     const handleClose = () => {
         if (typeof onClose === 'function') {
             onClose()
         }
     };
 
-    const dogsLength = dogs.length;
-
-    if (dogsLength > 0 ){
         return (
             <section className={info ? "info-panel" : "info-panel hidden" }>
                 <h2>{dog.name}, {dog.age}</h2>
@@ -29,13 +26,6 @@ const InfoPanel = ({dog, info, onClose, dogs}) => {
                 </div>
             </section>
         )
-    } else {
-        return null;
-    }
-
-
-
-
 };
 
 export default InfoPanel;

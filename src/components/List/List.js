@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import './List.scss';
-
+import InfoPanel from "../InfoPanel/InfoPanel";
+import ListElement from "../ListElement/ListElement";
+import database from "../firebaseService";
 
 const List = () => {
     const [list, setList] = useState([]);
+    const [showInfo, toggleShowInfo] = useState(false);
+    const [selectedDog, setSelectedDog] = useState(null);
 
-    useEffect(()=>{
+    const getDogs = () => {
         fetch('https://tin-dog.firebaseio.com/list.json')
             .then(response => {
                 if(response.ok) {
@@ -25,24 +29,46 @@ const List = () => {
             .catch(error => {
                 console.log(error);
             });
+    };
+
+    useEffect(()=>{
+       getDogs();
     }, []);
-    console.log(list);
+
+    const handleShowInfo = (dog)=> {
+        toggleShowInfo(true);
+        setSelectedDog(dog);
+    };
+
+    const handleCloseInfo = () => {
+        toggleShowInfo(false);
+    };
+
+    const handleDeleteDog = (dog) => {
+        const filteredDogs = list.filter((listElement) => {
+            return dog.id !== listElement.id;
+        });
+        setList(filteredDogs);
+        database.ref(`/list/${dog.id}`).remove();
+    };
+
     return (
         <>
             <ul className="dogs-list">
                 {list.map((element, i) => {
-                   return (
-                       <li className="dogs-list__element" key={i}>
-                           <span className="dogs__name">{element.name}</span>
-                           <div className="dogs__icons">
-                               <i className="fa fa-phone" aria-hidden="true"/>
-                               <i className="fa fa-info" aria-hidden="true"/>
-                               <i className="fa fa-times" aria-hidden="true"/>
-                           </div>
-                       </li>
-                       )
-                })}
+                    return <ListElement
+                                dog={element}
+                                key={i}
+                                showInfo={showInfo}
+                                onShowInfo={() => handleShowInfo(element)}
+                                onDeleteDog={() => handleDeleteDog(element)}
+                            />}
+                )}
             </ul>
+            {showInfo && <InfoPanel
+                info={showInfo}
+                dog={selectedDog}
+                onClose={handleCloseInfo}/> }
         </>
     );
 };

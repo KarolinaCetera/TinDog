@@ -5,7 +5,7 @@ import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
 
-// import postNewDog from "../postNewDog";
+import postNewDog from "../postNewDog";
 
 const Main = () => {
 
@@ -42,10 +42,10 @@ const Main = () => {
     }, []);
 
 
-    // const handleCreateDogs = (e) => {
-    //     e.preventDefault();
-    //     postNewDog();
-    // };
+    const handleCreateDogs = (e) => {
+        e.preventDefault();
+        postNewDog();
+    };
 
     const handleInfo = () => {
         setInfo(true);
@@ -101,15 +101,15 @@ const Main = () => {
                     dogs={dogs}
                 />
             </section> }
-            <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>
-            {isLoading ?  null : <InfoPanel
-                dogs={dogs}
+            {dogsLength === 0 ? null : <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>}
+            {isLoading || dogsLength === 0 ?  null : <InfoPanel
+                // dogs={dogs}
                 info={info}
                 dog={dog}
                 onClose={handleCloseInfo}
                 />
             }
-            {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
+            <button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>
         </>
     );
 };

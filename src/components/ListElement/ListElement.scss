@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+.dogs-list__element {
+	display: flex;
+	justify-content: space-between;
+	padding: 3rem 4rem;
+	&:nth-child(even) {
+		background-color: #FF7F5080;
+	}
+	.dogs__name {
+		font-size: 4rem;
+	}
+	.dogs__icons {
+		font-size: 4rem;
+		i {
+			padding: 0 1rem;
+			cursor: pointer;
+			&.fa-phone {
+				color: seagreen;
+			}
+			&.fa-info {
+				color: cornflowerblue;
+			}
+			&.fa-times {
+				color: brown;
+			}
+			&:hover {
+				cursor: pointer;
+				transform: scale(1.1);
+			}
+		}
+	}
+	&.invisible {
+		filter: blur(8px);
+	}
+}
