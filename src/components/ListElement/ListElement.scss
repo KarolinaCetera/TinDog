@@ -73,3 +73,24 @@
 		}
 	}
 }
+
+@media screen and (min-width: 1025px) {
+	.dogs-list__element {
+		flex-basis: 33%;
+		height: 50%;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 0;
+		transition: .3s;
+		.dogs__name {
+			font-size: 6rem;
+		}
+		.dogs__icons {
+			font-size: 8rem;
+		}
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

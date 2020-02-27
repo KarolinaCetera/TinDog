@@ -3,8 +3,22 @@
 .dogs-list {
 	position: relative;
 	top: 7rem;
-	height: 100vh;
+	height: 90vh;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
-	width: 100vw;
+}
+
+@media screen and (min-width: 1025px) {
+	.dogs-list {
+		top: 7.4vw;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.dogs-list {
+		top: 5vw;
+	}
 }

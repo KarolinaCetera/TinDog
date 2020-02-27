@@ -14,6 +14,7 @@ const Main = () => {
     const [isLoading, toggleIsLoading] = useState(true);
 
     const dogsLength = dogs.length;
+    const randomDog = Math.floor(Math.random() * (dogsLength - 1)) + 1;
 
     useEffect(() => {
         fetch('https://tin-dog.firebaseio.com/dogs.json')
@@ -30,8 +31,8 @@ const Main = () => {
                 arrayOfDogs.forEach((dog, index) => {
                    dog.id = dogsID[index];
                 });
-                const randomDog = arrayOfDogs[Math.floor(Math.random() * (dogsLength - 1)) + 1];
-                setDog(randomDog);
+                const someDog = arrayOfDogs[randomDog];
+                setDog(someDog);
                 setDogs(arrayOfDogs);
                 toggleIsLoading(false);
             })
@@ -57,11 +58,15 @@ const Main = () => {
     };
 
     const handleShowNewDog = () => {
-        setDog(dogs[[Math.floor(Math.random() * (dogsLength - 1)) + 1]]);
+        setDog(dogs[randomDog]);
     };
 
     const handleAddDog = () => {
-        // setList(prevState => [...prevState, dog]);
+        const dogIndex = dogs.indexOf(dog);
+        const filteredDogs = [...dogs];
+        filteredDogs.splice(dogIndex,1);
+        setDogs(filteredDogs);
+        setDog(dogs[randomDog]);
         fetch('https://tin-dog.firebaseio.com/list.json', {
             method: "POST",
             body: JSON.stringify(dog),
@@ -79,11 +84,6 @@ const Main = () => {
             .catch(error => {
                 console.log(error);
             });
-        const dogIndex = dogs.indexOf(dog);
-        const filteredDogs = [...dogs];
-        filteredDogs.splice(dogIndex,1);
-        setDogs(filteredDogs);
-        setDog(dogs[[Math.floor(Math.random() * (dogsLength - 1)) + 1]]);
         toggleIsLoading(false);
     };
 
@@ -93,21 +93,17 @@ const Main = () => {
                 {isLoading ? null: <section className="dog">
                     <Pic dog={dog}
                          info={info}
-                         dogsLength={dogsLength}
-                    />
+                         dogsLength={dogsLength}/>
                     <InfoBar
                         dog={dog}
                         info={info}
-                        dogs={dogs}
-                    />
+                        dogs={dogs}/>
                     {dogsLength === 0 ? null : <FavPanel info={info} onInfo={handleInfo} onNext={handleShowNewDog} onAdd={handleAddDog}/>}
                 </section> }
                 {isLoading || dogsLength === 0 ?  null : <InfoPanel
                     info={info}
                     dog={dog}
-                    onClose={handleCloseInfo}
-                />
-                }
+                    onClose={handleCloseInfo}/>}
             </main>
             {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
@@ -115,3 +111,5 @@ const Main = () => {
 };
 
 export default Main;
+
+// spinner, dezaktywować przycisk I na full screen

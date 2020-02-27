@@ -31,40 +31,14 @@
 	}
 }
 
-@media screen and (max-width: 360px) {
-	.fav-panel {
-		i {
-			font-size: 8rem;
-			padding: 0 2rem;
-			transition: .2s;
-			&.fa-times {
-				font-size: 9rem;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.fav-panel {
-		i {
-			font-size: 8rem;
-			padding: 0 2rem;
-			transition: .2s;
-			&.fa-times {
-				font-size: 9rem;
-			}
-		}
-	}
-}
-
 @media screen and (min-width: 481px) and (max-width: 1024px) {
 	.fav-panel {
 		i {
-			font-size: 14rem;
+			font-size: 13rem;
 			padding: 0 2rem;
 			transition: .2s;
 			&.fa-times {
-				font-size: 15rem;
+				font-size: 14rem;
 			}
 		}
 	}
@@ -80,6 +54,9 @@
 			transition: .2s;
 			&.fa-times {
 				font-size: 13rem;
+			}
+			&.fa-info {
+				display: none;
 			}
 		}
 	}

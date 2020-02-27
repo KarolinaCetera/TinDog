@@ -10,16 +10,18 @@ const InfoPanel = ({dog, info, onClose}) => {
     };
 
         return (
-            <section className={info ? "info-panel" : "info-panel hidden" }>
-                <h2>{dog.name}, {dog.age}</h2>
-                {dog.features.map((feature, i) => {
-                    return (
-                        <InfoRow
-                            key={i}
-                            feature={feature}
-                        />
-                    )
-                })}
+            <section className={info ? "info-panel high-resolution" : "info-panel hidden" }>
+                <div>
+                    <h2>{dog.name}, {dog.age}</h2>
+                    {dog.features.map((feature, i) => {
+                        return (
+                            <InfoRow
+                                key={i}
+                                feature={feature}
+                            />
+                        )
+                    })}
+                </div>
                 <div className="info-panel__icons">
                     <i className="fa fa-phone" aria-hidden="true"/>
                     <i className="fa fa-times" aria-hidden="true" onClick={handleClose}/>

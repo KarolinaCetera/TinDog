@@ -7,13 +7,16 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	.dog {
-		margin: 2rem auto 0;
-		align-self: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+	main {
+		.dog {
+			width: 80vw;
+			margin: 2rem auto 0;
+			align-self: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
 
@@ -24,21 +27,35 @@ button {
 	border-radius: 20px;
 }
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	#root {
+		main {
+			height: 80vh;
+			.dog {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-self: flex-start;
+			}
+		}
+
+	}
+}
+
 @media screen and (min-width: 1025px) {
 	#root {
 		main {
 			display: flex;
 			width: 100vw;
-			height: 100vh;
+			height: 90vh;
 			.dog {
-				width: 50%;
+				width: 45%;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				align-self: flex-start;
-				margin: 1rem 2rem;
+				margin: 0 2rem;
 			}
 		}
-
 	}
 }

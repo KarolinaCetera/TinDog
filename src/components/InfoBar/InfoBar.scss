@@ -1,10 +1,9 @@
 @import "../../styles/variables";
 
 .infobar {
-	align-self: flex-start;
+	text-align: left;
 	padding: 1rem 0;
 	.infobar__info {
-		text-align: left;
 		font-size: 3rem;
 		font-weight: 800;
 	}
@@ -13,18 +12,8 @@
 	}
 }
 
-@media screen and (min-width: 360px) {
-	.infobar {
-		padding: 2rem 0;
-		.infobar__info {
-			font-size: 4.5rem;
-		}
-	}
-}
-
 @media screen and (min-width: 480px) and (max-width: 1024px) {
 	.infobar {
-		margin-bottom: 2rem;
 		.infobar__info {
 			font-size: 8rem;
 		}
@@ -34,7 +23,7 @@
 @media screen and (min-width: 1025px) {
 	.infobar {
 		.infobar__info {
-			font-size: 6rem;
+			display: none;
 		}
 	}
 }
