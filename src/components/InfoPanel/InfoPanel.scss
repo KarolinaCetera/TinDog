@@ -3,7 +3,9 @@
 .info-panel {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	width: 90vw;
+	height: 80vh;
 	border-radius: 20px;
 	position: fixed;
 	top: 15%;
@@ -72,7 +74,8 @@
 
 @media screen and (min-width: 1025px) {
 	.info-panel.hidden {
-		height: 85vh;
+		height: 80vh;
+		top: 11rem;
 		position: relative;
 		display: flex;
 		width: 45%;
@@ -82,37 +85,48 @@
 		.info-panel__icons {
 			margin: 1rem 0;
 			display: flex;
-			align-items: flex-start;
+			align-items: center;
 			justify-content: center;
-			i {
-				position: relative;
-				align-self: center;
-				font-size: 5rem;
-				&::after {
-					content: "Call animal shelter!";
+			.fa-times {
+				display: none;
+			}
+			a {
+				text-decoration: none;
+				i {
 					position: relative;
-					font-family: $main-font;
-					font-size: 3rem;
-					padding: 0 2rem;
-					margin-bottom: 1rem;
-				}
-				&:hover {
-					cursor: pointer;
-					transform: scale(1.1);
-				}
-				&:last-of-type {
-					display: none;
+					align-self: center;
+					font-size: 6rem;
+					&.fa-envelope-o {
+						display: flex;
+						align-items: center;
+						&::after {
+							display: inline-block;
+							content: "Send an e-mail to animal shelter!";
+							position: relative;
+							width: 28rem;
+							font-family: $main-font;
+							font-size: 3.5rem;
+							padding: 0 2rem;
+							margin-bottom: 1rem;
+						}
+					}
+
+					&:hover {
+						cursor: pointer;
+						transform: scale(1.1);
+					}
+
+
 				}
 			}
-
 		}
 	}
 
 	.info-panel.high-resolution {
 		position: fixed;
 		width: 90vw;
-		height: 70vh;
-		padding: 3rem 0;
+		height: 80vh;
+		padding: 1rem 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -123,6 +137,8 @@
 			width: 50%;
 			background-repeat: no-repeat;
 			background-size: cover;
+			border-radius: 25px;
+			margin-left: 2rem;
 		}
 		h2 {
 			font-size: 6rem;

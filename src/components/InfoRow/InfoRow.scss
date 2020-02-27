@@ -1,7 +1,16 @@
 .info-row {
-	padding: 1rem 2rem;
+	padding: .7rem 2rem;
 	h3 {
-		font-size: 1.7rem;
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and  (min-width: 375px) and (max-width: 480px) {
+	.info-row {
+		padding: 1rem 2rem;
+		h3 {
+			font-size: 3rem;
+		}
 	}
 }
 
