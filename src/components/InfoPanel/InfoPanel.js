@@ -11,6 +11,7 @@ const InfoPanel = ({dog, info, onClose}) => {
 
         return (
             <section className={info ? "info-panel high-resolution" : "info-panel hidden" }>
+                <div className="dog-picture" style={{backgroundImage: `url("${dog.picture}")`}}/>
                 <div>
                     <h2>{dog.name}, {dog.age}</h2>
                     {dog.features.map((feature, i) => {
@@ -23,7 +24,7 @@ const InfoPanel = ({dog, info, onClose}) => {
                     })}
                 </div>
                 <div className="info-panel__icons">
-                    <i className="fa fa-phone" aria-hidden="true"/>
+                   <a content="Send mail to shelter" href="mailto:shrewfallout@gmail.com"><i className="fa fa-envelope-o" aria-hidden="true" /></a>
                     <i className="fa fa-times" aria-hidden="true" onClick={handleClose}/>
                 </div>
             </section>

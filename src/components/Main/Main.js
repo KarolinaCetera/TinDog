@@ -58,7 +58,7 @@ const Main = () => {
     };
 
     const handleShowNewDog = () => {
-        setDog(dogs[randomDog]);
+        setDog(dogs[Math.floor(Math.random() * (dogsLength - 1)) + 1]);
     };
 
     const handleAddDog = () => {
@@ -114,3 +114,4 @@ export default Main;
 
 // w oknie info zmienić słuchawkę na ikonkę zdjęcia, po kliknięciu wyświetla się zdjęcie psa
 // ale jak to ogarnąć na mobile??
+//nowy stan dogsOnTheList, który przy renderze pobiera z list.json i porównywać dogs z dogsOnTheList - przez filter wyświetlać te, których nie ma

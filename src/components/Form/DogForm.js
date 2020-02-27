@@ -17,8 +17,8 @@ const DogForm = () => {
                     .moreThan(0, 'Insert digit higher than 0')
             })}
 
-            onSubmit={(values, {setSubmitting}) => {
-                const {name, picture, age, health, children, otherPets, food, cleanness, activity, character} = values;
+            onSubmit={(values, {setSubmitting, resetForm}, initialValues) => {
+                let {name, picture, age, health, children, otherPets, food, cleanness, activity, character} = values;
                 const dog = {
                     name,
                     picture,
@@ -74,6 +74,8 @@ const DogForm = () => {
 
                 setTimeout(() => {
                     setSubmitting(false);
+                    resetForm(initialValues)
+                    alert('You just added dog!');
                 }, 400);
                 }}>
             <Form className="form">

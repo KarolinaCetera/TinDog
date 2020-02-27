@@ -18,7 +18,7 @@
 		height: 8rem;
 		width: 8rem;
 		position: relative;
-		z-index: -2;
+		z-index: -14;
 		animation-name: spin;
 		animation-duration: 1000ms;
 		animation-iteration-count: infinite;
@@ -53,10 +53,10 @@
 	}
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 400px) and (max-width: 768px) {
 	.pic__container {
 		margin-top: 9rem;
-		height: 55vh;
+		height: 65vh;
 		width: 90vw;
 	}
 }
