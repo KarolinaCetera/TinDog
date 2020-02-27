@@ -8,6 +8,22 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&::after {
+		display: inline-block;
+		content: "";
+		background-image: url('../../assets/paw.svg');
+		height: 8rem;
+		width: 8rem;
+		position: relative;
+		z-index: -2;
+		animation-name: spin;
+		animation-duration: 1000ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
 	&.invisible {
 		filter: blur(8px);
 	}
@@ -28,6 +44,15 @@
 	text-align: center;
 }
 
+@keyframes spin {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+
 @media screen and (min-width: 481px) and (max-width: 768px) {
 	.pic__container {
 		margin-top: 9rem;
@@ -44,6 +69,7 @@
 
 @media screen and (min-width: 1025px) {
 	.pic__container {
+		margin-top: 11rem;
 		height: 55vh;
 		width: 100%;
 	}

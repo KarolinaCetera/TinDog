@@ -112,4 +112,5 @@ const Main = () => {
 
 export default Main;
 
-// spinner, dezaktywować przycisk I na full screen
+// w oknie info zmienić słuchawkę na ikonkę zdjęcia, po kliknięciu wyświetla się zdjęcie psa
+// ale jak to ogarnąć na mobile??

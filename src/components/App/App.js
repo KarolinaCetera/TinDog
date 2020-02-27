@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import Nav from "../Nav/Nav";
 import About from "../About/About";
+import AddDog from "../AddDog/AddDog";
 
 const App = () => {
     return (
@@ -17,9 +18,10 @@ const App = () => {
                 <Switch>
                    <Route exact path='/' component={Main} />
                     <Route path='/list' component={List} />
+                    <Route path='/form' component={AddDog} />
                     <Route path='/about' component={About} />
                 </Switch>
-            </HashRouter>;
+            </HashRouter>
         </>
     )
 };

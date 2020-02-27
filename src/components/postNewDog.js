@@ -59,7 +59,7 @@ const postNewDog = () => {
                 });
             console.log('gotowe!')
         },3000);
-
+    console.log('PRzynajmniej podpięte...')
 };
 
 export default postNewDog;

@@ -43,7 +43,7 @@ export class Dog {
             const healthOptions = ['healthy', 'require special treatment', 'require meds', 'terminally ill'];
             const childrenOptions = ['yes', 'no'];
             const otherPetsOptions = ['yes', 'no', 'only cats', 'only dogs'];
-            const foodOptions = ['normal diet', 'require special diet', 'require low-fat diet', 'require low-carb diet'];
+            const foodOptions = ['normal diet', 'require special diet', 'name', 'require low-carb diet'];
             const cleannessOptions = ['totally trained', 'require training'];
             const activityOptions = ['low', 'medium', 'high'];
             const vaccinationOptions = ['yes', 'no'];
