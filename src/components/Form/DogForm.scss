@@ -37,16 +37,13 @@
 			}
 		}
 		.form-select {
+			display: block;
 			height: 4rem;
 			width: 60%;
-			padding: 2rem;
 			margin-left: 2rem;
 			font-size: 2rem;
 			border: 2px dashed coral;
 			border-radius: 10px;
-			&:hover {
-				background-color: #ddd;
-			}
 		}
 	}
 	.form-submit {

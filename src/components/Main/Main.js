@@ -10,6 +10,7 @@ const Main = () => {
 
     const [dog, setDog] = useState('');
     const [dogs, setDogs] = useState([]);
+    const [dogsOnTheList, setDogsOnTheList] = useState([]);
     const [info, setInfo] = useState(false);
     const [isLoading, toggleIsLoading] = useState(true);
 
@@ -17,6 +18,23 @@ const Main = () => {
     const randomDog = Math.floor(Math.random() * (dogsLength - 1)) + 1;
 
     useEffect(() => {
+        fetch('https://tin-dog.firebaseio.com/list.json')
+            .then(response => {
+                if(response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error ('Błąd sieci')
+                }
+            })
+            .then(dog => {
+                const arrayOfChosen = Object.values(dog);
+                setDogsOnTheList(arrayOfChosen)
+            })
+            .catch(error => {
+                console.log(error)
+            });
+
+
         fetch('https://tin-dog.firebaseio.com/dogs.json')
             .then(response => {
                 if(response.ok) {
@@ -41,10 +59,9 @@ const Main = () => {
             })
     }, []);
 
-    // const handleCreateDogs = (e) => {
-    //     e.preventDefault();
-    //     postNewDog();
-    // };
+    // useEffect(() =>{
+    //     //pętla w pętli
+    // }, [isLoading]);
 
     const handleInfo = () => {
         setInfo(true);
@@ -105,7 +122,6 @@ const Main = () => {
                     dog={dog}
                     onClose={handleCloseInfo}/>}
             </main>
-            {/*<button onClick={handleCreateDogs}>Utwórz pieseła!!!</button>*/}
         </>
     );
 };
