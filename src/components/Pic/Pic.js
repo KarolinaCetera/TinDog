@@ -2,7 +2,6 @@ import React from 'react';
 import './Pic.scss';
 
 const Pic = ({dog, info, dogsLength}) => {
-    console.log(dogsLength)
     if (dogsLength === 0) {
         return <p className="no-dogs">There are no more dogs in your neighbourhood!</p>
     } else {

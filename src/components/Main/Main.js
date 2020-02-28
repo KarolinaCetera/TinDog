@@ -4,8 +4,8 @@ import Pic from '../Pic/Pic';
 import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
-// import _ from 'lodash';
-// import { uniq } from 'lodash';
+import _ from 'lodash';
+import { uniq } from 'lodash';
 
 const Main = () => {
 
