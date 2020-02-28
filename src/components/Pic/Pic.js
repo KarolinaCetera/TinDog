@@ -3,10 +3,10 @@ import './Pic.scss';
 
 const Pic = ({dog, info, dogsLength}) => {
 
-    if (dogsLength > 0) {
-        return <div className= {!info ? "pic__container" : "pic__container invisible"} style={{backgroundImage: `url("${dog.picture}")`}} />
+    if (dogsLength === 0) {
+        return <p className="no-dogs">There are no more dogs in your neighbourhood!</p>
     } else {
-       return <p className="no-dogs">There are no more dogs in your neighbourhood!</p>
+        return <div className= {!info ? "pic__container" : "pic__container invisible"} style={{backgroundImage: `url("${dog.picture}")`}} />
     }
 };
 

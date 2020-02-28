@@ -4,8 +4,8 @@ import Pic from '../Pic/Pic';
 import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
-import _ from 'lodash';
-import { uniq } from 'lodash';
+// import _ from 'lodash';
+// import { uniq } from 'lodash';
 
 const Main = () => {
 
@@ -53,16 +53,6 @@ const Main = () => {
                 const someDog = arrayOfDogs[randomDog];
                 setDog(someDog);
                 setDogs(arrayOfDogs);
-                // const matchDogs = [...dogs];
-                // matchDogs.forEach((dog) => {
-                //     dogsOnTheList.forEach((savedDog) => {
-                //         if (dog.id === savedDog.id) {
-                //             _.remove(matchDogs, dog);
-                //         }
-                //     })
-                // });
-                // console.log(matchDogs);
-                // setDogs(matchDogs);
                 toggleIsLoading(false);
             })
             .catch(error => {
