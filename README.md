@@ -4,4 +4,5 @@ During last week of Coders Lab Bootcamp we were supposed to creat our own projec
 
 That's how I created TinDog - app for finding your forever friend in animal shelters. 
 
+Find out, how it works on: https://youtu.be/gueADtbv6iY
 Check it out on: https://karolinaceterawojcik.github.io/TinDog/#/
