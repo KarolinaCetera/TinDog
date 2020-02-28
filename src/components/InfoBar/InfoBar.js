@@ -8,7 +8,7 @@ const InfoBar = ({dog, info, dogs}) => {
     if (dogsLength > 0 ){
         return (
             <div className={!info ? "infobar" : "infobar invisible"}>
-                <span className="infobar__info">{dog.name}, {dog.age} yrs dupa</span>
+                <span className="infobar__info">{dog.name}, {dog.age} yrs</span>
             </div>
         )
     } else {
