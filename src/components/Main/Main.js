@@ -53,6 +53,16 @@ const Main = () => {
                 const someDog = arrayOfDogs[randomDog];
                 setDog(someDog);
                 setDogs(arrayOfDogs);
+                // const matchDogs = [...dogs];
+                // matchDogs.forEach((dog) => {
+                //     dogsOnTheList.forEach((savedDog) => {
+                //         if (dog.id === savedDog.id) {
+                //             _.remove(matchDogs, dog);
+                //         }
+                //     })
+                // });
+                // console.log(matchDogs);
+                // setDogs(matchDogs);
                 toggleIsLoading(false);
             })
             .catch(error => {
@@ -60,19 +70,19 @@ const Main = () => {
             });
     }, []);
 
-
-    useEffect(() => {
-        let matchDogs = [...dogs];
-        matchDogs.forEach((dog) => {
-            dogsOnTheList.forEach((savedDog) => {
-                if (dog.id === savedDog.id) {
-                    _.remove(matchDogs, dog);
-                }
-            })
-        });
-        console.log(matchDogs);
-        setDogs(matchDogs);
-    }, []);
+    //
+    // useEffect(() => {
+    //     let matchDogs = [...dogs];
+    //     matchDogs.forEach((dog) => {
+    //         dogsOnTheList.forEach((savedDog) => {
+    //             if (dog.id === savedDog.id) {
+    //                 _.remove(matchDogs, dog);
+    //             }
+    //         })
+    //     });
+    //     console.log(matchDogs);
+    //     setDogs(matchDogs);
+    // }, []);
 
     const handleInfo = () => {
         setInfo(true);
