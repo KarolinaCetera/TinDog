@@ -16,7 +16,7 @@ const Main = () => {
     const [isLoading, toggleIsLoading] = useState(true);
 
     const dogsLength = dogs.length;
-    const randomDog = Math.ceil(Math.random() * dogsLength);
+    const randomDog = Math.floor(Math.random() * (dogsLength - 1) + 1);
 
     useEffect(() => {
         fetch('https://tin-dog.firebaseio.com/list.json')
