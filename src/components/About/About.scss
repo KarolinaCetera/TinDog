@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.about {
+	position: relative;
+	top: 12vh;
+	padding: 0 2rem;
+	.about-app {
+		h3 {
+			font-size: 4rem;
+			padding: 1rem 0;
+		}
+		p {
+			font-size: 2rem;
+			line-height: 2.5rem;
+
+		}
+	}
+	.about-author {
+		h3 {
+			font-size: 4rem;
+			padding: 1rem 0;
+		}
+		p {
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+	}
+
+}
+

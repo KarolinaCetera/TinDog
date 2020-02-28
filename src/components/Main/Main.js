@@ -4,7 +4,8 @@ import Pic from '../Pic/Pic';
 import InfoBar from '../InfoBar/InfoBar';
 import FavPanel from '../FavPanel/FavPanel';
 import InfoPanel from "../InfoPanel/InfoPanel";
-// import postNewDog from "../postNewDog";
+import _ from 'lodash';
+import { uniq } from 'lodash';
 
 const Main = () => {
 
@@ -15,7 +16,7 @@ const Main = () => {
     const [isLoading, toggleIsLoading] = useState(true);
 
     const dogsLength = dogs.length;
-    const randomDog = Math.floor(Math.random() * (dogsLength - 1)) + 1;
+    const randomDog = Math.ceil(Math.random() * dogsLength);
 
     useEffect(() => {
         fetch('https://tin-dog.firebaseio.com/list.json')
@@ -56,12 +57,22 @@ const Main = () => {
             })
             .catch(error => {
                 console.log(error);
-            })
+            });
     }, []);
 
-    // useEffect(() =>{
-    //     //pętla w pętli
-    // }, [isLoading]);
+
+    useEffect(() => {
+        let matchDogs = [...dogs];
+        matchDogs.forEach((dog) => {
+            dogsOnTheList.forEach((savedDog) => {
+                if (dog.id === savedDog.id) {
+                    _.remove(matchDogs, dog);
+                }
+            })
+        });
+        console.log(matchDogs);
+        setDogs(matchDogs);
+    }, []);
 
     const handleInfo = () => {
         setInfo(true);
