@@ -1,6 +1,6 @@
 Welcome to my site! 
 
-During last week of Coders Lab Bootcamp we were supposed to creat our own project. As I have a lot of love for all pets, but mostly dogs, I decided to create TinDog - app for finding your forever friend in animal shelters. 
+During last week of Coders Lab Bootcamp we were supposed to create our own project. As I have a lot of love for all pets, but mostly dogs, I decided to create TinDog - app for finding your forever friend in animal shelters. 
 
 Main page let you check dogs that are available for adoption. Each position has a picture of dog and brief information about its features. If you are interested in adopting a dog or have any questions about it, you can send an e-mail to the shelter directly from main page.
 
