@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/TinDog/static/css/main.3ac1ce7d.chunk.css",
+    "main.js": "/TinDog/static/js/main.2b43fa75.chunk.js",
+    "main.js.map": "/TinDog/static/js/main.2b43fa75.chunk.js.map",
+    "runtime-main.js": "/TinDog/static/js/runtime-main.b2041258.js",
+    "runtime-main.js.map": "/TinDog/static/js/runtime-main.b2041258.js.map",
+    "static/css/2.780a4f39.chunk.css": "/TinDog/static/css/2.780a4f39.chunk.css",
+    "static/js/2.a41d8051.chunk.js": "/TinDog/static/js/2.a41d8051.chunk.js",
+    "static/js/2.a41d8051.chunk.js.map": "/TinDog/static/js/2.a41d8051.chunk.js.map",
+    "index.html": "/TinDog/index.html",
+    "precache-manifest.77baf57c71678ad890bf4b0be3f95b52.js": "/TinDog/precache-manifest.77baf57c71678ad890bf4b0be3f95b52.js",
+    "service-worker.js": "/TinDog/service-worker.js",
+    "static/css/2.780a4f39.chunk.css.map": "/TinDog/static/css/2.780a4f39.chunk.css.map",
+    "static/css/main.3ac1ce7d.chunk.css.map": "/TinDog/static/css/main.3ac1ce7d.chunk.css.map",
+    "static/js/2.a41d8051.chunk.js.LICENSE.txt": "/TinDog/static/js/2.a41d8051.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/TinDog/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/Pic.scss": "/TinDog/static/media/paw.1ca4ec8d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2041258.js",
+    "static/css/2.780a4f39.chunk.css",
+    "static/js/2.a41d8051.chunk.js",
+    "static/css/main.3ac1ce7d.chunk.css",
+    "static/js/main.2b43fa75.chunk.js"
+  ]
+}
