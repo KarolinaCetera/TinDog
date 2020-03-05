@@ -2,7 +2,7 @@ Welcome to my site!
 
 <h1>Introduction</h1>
 
-Are you looking for a dog to adopt? If so, you probably want to know everything about the pet you choose: it's health condition, character, mayby nutrition issues? There's something for you - TinDog! 
+Are you looking for a dog to adopt? If so, you probably want to know everything about the pet you choose: it's health condition, character, maybe nutrition issues? There's something for you - TinDog! 
 
 <h2>Description</h2>
 
